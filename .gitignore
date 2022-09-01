@@ -1,0 +1,7 @@
+.venv
+.DS_Store
+.idea/
+.python-version
+__pycache__
+dist/
+asciinema_demo/
