@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-"""This Cli-program help you to different two files which have formats .json or .yaml."""
+"""This Cli-program return different two files
+ which have formats .json or .yaml."""
 
 from gendiff.gendiff import generate_diff, path1, path2
 

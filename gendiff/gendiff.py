@@ -36,5 +36,3 @@ def generate_diff(path1: str, path2: str):
             res += f"\n + {key}: {to_json_format(file2[key])}"
     res += '\n}'
     return res
-
-
