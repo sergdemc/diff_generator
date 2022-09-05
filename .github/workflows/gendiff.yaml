@@ -3,12 +3,7 @@
 
 name: gendiff_cli
 
-on:
-  push:
-    branches:
-      - '**'
-    tags:
-      - '**'
+on: [push]
 
 jobs:
   build:
