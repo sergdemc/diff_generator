@@ -2,7 +2,8 @@
 """This Cli-program return different two files
  which have formats .json or .yaml."""
 
-from gendiff.gendiff import generate_diff, path1, path2
+from gendiff.gendiff import generate_diff
+from gendiff.cli import path1, path2
 
 
 def main():
