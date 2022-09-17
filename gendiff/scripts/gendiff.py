@@ -5,7 +5,7 @@ This Cli-program return different two files
  which have formats .json or .yaml.
 """
 
-from gendiff.generate_diff import generate_diff
+from gendiff.gen_diff import generate_diff
 from gendiff.cli import path1, path2
 
 

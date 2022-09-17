@@ -1,5 +1,5 @@
 import pytest
-from gendiff import generate_diff
+from gendiff import gen_diff
 
 
 json_1 = "tests/fixtures/file1.json"
@@ -19,8 +19,7 @@ yml_res_2 = "tests/fixtures/result2_yml"
                                                     (yaml_1, yaml_2, yml_res_1)])
 def test_generate_diff(path1, path2, expected):
     with open(expected) as f:
-        assert generate_diff.generate_diff(path1, path2) == f.read()
-
+        assert gen_diff.generate_diff(path1, path2) == f.read()
 
 
 # def test_with_empty_file():

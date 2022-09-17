@@ -11,24 +11,26 @@ def stringify_val(data, depth: int) -> str:
 
 def stringify_diff(file: dict, depth=1) -> str:
     lst = []
+    FLAG = {
+        'unchanged': "  ",
+        'added': "+ ",
+        'removed': "- "
+    }
+
     for k, v in file.items():
-        if v['flag'] == 'nested':
+        flag = v['flag']
+
+        if flag == 'nested':
             lst.append(f"{'  '*depth}  {k}: {{\n")
             lst.append(f"{stringify_diff(v['value'], depth + 2)}")
             lst.append(f"{'  '*(depth+1)}}}\n")
-        elif v['flag'] == 'changed':
+        elif flag == 'changed':
             lst.append(f"{'  '*depth}- {k}: "
                        f"{stringify_val(v['old_value'], depth+2)}\n")
             lst.append(f"{'  ' * depth}+ {k}: "
                        f"{stringify_val(v['new_value'], depth+2)}\n")
-        elif v['flag'] == 'unchanged':
-            lst.append(f"{'  ' * depth}  {k}: "
-                       f"{stringify_val(v['value'], depth+2)}\n")
-        elif v['flag'] == 'added':
-            lst.append(f"{'  ' * depth}+ {k}: "
-                       f"{stringify_val(v['value'], depth+2)}\n")
-        elif v['flag'] == 'removed':
-            lst.append(f"{'  ' * depth}- {k}: "
+        else:
+            lst.append(f"{'  ' * depth}{FLAG[flag]}{k}: "
                        f"{stringify_val(v['value'], depth+2)}\n")
     res = ''.join(lst)
     return res
