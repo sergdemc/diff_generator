@@ -1,4 +1,9 @@
 import argparse
+# import pyproject as pyproject
+# import pkg_resources
+# my_version = pkg_resources.get_distribution('gendiff').version
+
+# VERSION = pyproject.__version__
 
 
 def parse_cli():
@@ -7,10 +12,15 @@ def parse_cli():
     parser.add_argument('first_file', type=str)
     parser.add_argument('second_file', type=str)
     parser.add_argument('-f', '--format',
-                        help='set format of output stylish, plane, JSON',
+                        help='output formats: stylish, plane, JSON\
+                         (default: "stylish")',
                         default='stylish', type=str)
+    parser.add_argument('-V', '--version',
+                        help='output the version number',
+                        default='', type=str)
+
     args = parser.parse_args()
-    return args.first_file, args.second_file
+    return args.first_file, args.second_file, args.format
 
 
-path1, path2 = parse_cli()
+path1, path2, format_name = parse_cli()

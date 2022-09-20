@@ -3,17 +3,11 @@ import yaml
 
 
 def parse_json(path: str):
-    try:
-        return json.load(open(path))
-    except json.JSONDecodeError:
-        return {}
+    return json.load(open(path))
 
 
 def parse_yaml(path: str):
-    f = yaml.safe_load(open(path))
-    if f:
-        return f
-    return {}
+    return yaml.safe_load(open(path))
 
 
 def get_dict(path: str) -> dict:
@@ -25,10 +19,6 @@ def get_dict(path: str) -> dict:
             return parse_json(path)
         elif path.endswith('.yaml') or path.endswith('.yml'):
             return parse_yaml(path)
-        else:
-            raise ValueError("Input path to json or yml files")
-    else:
-        raise ValueError("Input path as string")
 
 
 def normalize_values(file: dict) -> dict:

@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from gendiff.stylish import final_stringify_diff
+from gendiff.views import RENDERS
 from gendiff.parse_files import get_dict, normalize_values
 
 
@@ -34,8 +34,8 @@ def get_final_diff(old: dict, new: dict) -> OrderedDict:
     return OrderedDict(sorted(res.items()))
 
 
-def generate_diff(path1: str, path2: str, format_='stylish') -> str:
+def generate_diff(path1: str, path2: str, format_name='stylish') -> str:
     file1 = normalize_values(get_dict(path1))
     file2 = normalize_values(get_dict(path2))
     diff = get_final_diff(file1, file2)
-    return final_stringify_diff(diff)
+    return RENDERS[format_name].view_diff(diff)
