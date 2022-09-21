@@ -1,6 +1,7 @@
-from gendiff.views import stylish, plain
+from gendiff.views import stylish, plain, json_view
 
 RENDERS = {
     'stylish': stylish,
-    'plain': plain
+    'plain': plain,
+    'json': json_view
 }

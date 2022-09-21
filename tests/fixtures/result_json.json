@@ -1,0 +1,98 @@
+{
+    "common": {
+        "flag": "nested",
+        "value": {
+            "follow": {
+                "flag": "added",
+                "value": "false"
+            },
+            "setting1": {
+                "flag": "unchanged",
+                "value": "Value 1"
+            },
+            "setting2": {
+                "flag": "removed",
+                "value": 200
+            },
+            "setting3": {
+                "flag": "changed",
+                "old_value": "true",
+                "new_value": "null"
+            },
+            "setting4": {
+                "flag": "added",
+                "value": "blah blah"
+            },
+            "setting5": {
+                "flag": "added",
+                "value": {
+                    "key5": "value5"
+                }
+            },
+            "setting6": {
+                "flag": "nested",
+                "value": {
+                    "doge": {
+                        "flag": "nested",
+                        "value": {
+                            "wow": {
+                                "flag": "changed",
+                                "old_value": "",
+                                "new_value": "so much"
+                            }
+                        }
+                    },
+                    "key": {
+                        "flag": "unchanged",
+                        "value": "value"
+                    },
+                    "ops": {
+                        "flag": "added",
+                        "value": "vops"
+                    }
+                }
+            }
+        }
+    },
+    "group1": {
+        "flag": "nested",
+        "value": {
+            "baz": {
+                "flag": "changed",
+                "old_value": "bas",
+                "new_value": "bars"
+            },
+            "foo": {
+                "flag": "unchanged",
+                "value": "bar"
+            },
+            "nest": {
+                "flag": "changed",
+                "old_value": {
+                    "key": "value"
+                },
+                "new_value": "str"
+            }
+        }
+    },
+    "group2": {
+        "flag": "removed",
+        "value": {
+            "abc": 12345,
+            "deep": {
+                "id": 45
+            }
+        }
+    },
+    "group3": {
+        "flag": "added",
+        "value": {
+            "deep": {
+                "id": {
+                    "number": 45
+                }
+            },
+            "fee": 100500
+        }
+    }
+}

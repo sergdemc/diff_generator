@@ -1,23 +1,21 @@
 import argparse
-# import pyproject as pyproject
 # import pkg_resources
 # my_version = pkg_resources.get_distribution('gendiff').version
-
-# VERSION = pyproject.__version__
 
 
 def parse_cli():
     parser = argparse.ArgumentParser(description='Compares two configuration\
-     files and shows a difference.')
+                        files and shows a difference.')
     parser.add_argument('first_file', type=str)
     parser.add_argument('second_file', type=str)
     parser.add_argument('-f', '--format',
-                        help='output formats: stylish, plane, JSON\
+                        help='output formats: stylish, plane, json\
                          (default: "stylish")',
                         default='stylish', type=str)
     parser.add_argument('-V', '--version',
-                        help='output the version number',
-                        default='', type=str)
+                        help='output the version info',
+                        action='version',
+                        version='%(prog)s {}'.format('0.3.0'))
 
     args = parser.parse_args()
     return args.first_file, args.second_file, args.format
