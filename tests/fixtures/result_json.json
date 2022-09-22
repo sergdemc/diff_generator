@@ -17,7 +17,9 @@
             "setting3": {
                 "flag": "changed",
                 "old_value": "true",
-                "new_value": "null"
+                "new_value": {
+                    "key": "value"
+                }
             },
             "setting4": {
                 "flag": "added",
@@ -37,7 +39,7 @@
                         "value": {
                             "wow": {
                                 "flag": "changed",
-                                "old_value": "",
+                                "old_value": "too much",
                                 "new_value": "so much"
                             }
                         }
@@ -93,6 +95,53 @@
                 }
             },
             "fee": 100500
+        }
+    },
+    "group4": {
+        "flag": "nested",
+        "value": {
+            "default": {
+                "flag": "changed",
+                "old_value": "null",
+                "new_value": ""
+            },
+            "foo": {
+                "flag": "changed",
+                "old_value": 0,
+                "new_value": "null"
+            },
+            "isNested": {
+                "flag": "changed",
+                "old_value": "false",
+                "new_value": "none"
+            },
+            "key": {
+                "flag": "added",
+                "value": "false"
+            },
+            "nest": {
+                "flag": "nested",
+                "value": {
+                    "bar": {
+                        "flag": "changed",
+                        "old_value": "",
+                        "new_value": 0
+                    },
+                    "isNested": {
+                        "flag": "removed",
+                        "value": "true"
+                    }
+                }
+            },
+            "someKey": {
+                "flag": "added",
+                "value": "true"
+            },
+            "type": {
+                "flag": "changed",
+                "old_value": "bas",
+                "new_value": "bar"
+            }
         }
     }
 }

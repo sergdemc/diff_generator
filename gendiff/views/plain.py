@@ -8,7 +8,7 @@ def corr_vals(data):
     """
     if isinstance(data, (list, set, tuple, dict)):
         return '[complex value]'
-    elif data in ('true', 'false', 'null'):
+    elif data in ('true', 'false', 'null') or isinstance(data, (int, float)):
         return data
     return f"'{data}'"
 

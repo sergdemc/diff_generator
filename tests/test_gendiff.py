@@ -4,7 +4,7 @@ from gendiff import gen_diff
 json_1 = "tests/fixtures/file1.json"
 json_2 = "tests/fixtures/file2.json"
 yaml_1 = "tests/fixtures/file1.yml"
-yaml_2 = "tests/fixtures/file2.yaml"
+yaml_2 = "tests/fixtures/file2.yml"
 res_stylish = "tests/fixtures/result_stylish"
 res_plain = "tests/fixtures/result_plain"
 res_json = "tests/fixtures/result_json.json"

@@ -31,6 +31,6 @@ def normalize_values(file: dict) -> dict:
     for key, val in file.items():
         if isinstance(val, dict):
             normalize_values(val)
-        elif val in corr_values:
+        elif isinstance(val, (bool, type(None))):
             file[key] = corr_values[val]
     return file
