@@ -15,7 +15,7 @@ def parse_cli():
     parser.add_argument('-V', '--version',
                         help='output the version info',
                         action='version',
-                        version='%(prog)s {}'.format('0.3.0'))
+                        version='%(prog)s {}'.format('0.1.0'))
 
     args = parser.parse_args()
     return args.first_file, args.second_file, args.format
