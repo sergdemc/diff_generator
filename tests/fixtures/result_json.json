@@ -1,55 +1,55 @@
 {
     "common": {
-        "flag": "nested",
+        "status": "nested",
         "value": {
             "follow": {
-                "flag": "added",
+                "status": "added",
                 "value": "false"
             },
             "setting1": {
-                "flag": "unchanged",
+                "status": "unchanged",
                 "value": "Value 1"
             },
             "setting2": {
-                "flag": "removed",
+                "status": "removed",
                 "value": 200
             },
             "setting3": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": "true",
                 "new_value": {
                     "key": "value"
                 }
             },
             "setting4": {
-                "flag": "added",
+                "status": "added",
                 "value": "blah blah"
             },
             "setting5": {
-                "flag": "added",
+                "status": "added",
                 "value": {
                     "key5": "value5"
                 }
             },
             "setting6": {
-                "flag": "nested",
+                "status": "nested",
                 "value": {
                     "doge": {
-                        "flag": "nested",
+                        "status": "nested",
                         "value": {
                             "wow": {
-                                "flag": "changed",
+                                "status": "changed",
                                 "old_value": "too much",
                                 "new_value": "so much"
                             }
                         }
                     },
                     "key": {
-                        "flag": "unchanged",
+                        "status": "unchanged",
                         "value": "value"
                     },
                     "ops": {
-                        "flag": "added",
+                        "status": "added",
                         "value": "vops"
                     }
                 }
@@ -57,19 +57,19 @@
         }
     },
     "group1": {
-        "flag": "nested",
+        "status": "nested",
         "value": {
             "baz": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": "bas",
                 "new_value": "bars"
             },
             "foo": {
-                "flag": "unchanged",
+                "status": "unchanged",
                 "value": "bar"
             },
             "nest": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": {
                     "key": "value"
                 },
@@ -78,7 +78,7 @@
         }
     },
     "group2": {
-        "flag": "removed",
+        "status": "removed",
         "value": {
             "abc": 12345,
             "deep": {
@@ -87,7 +87,7 @@
         }
     },
     "group3": {
-        "flag": "added",
+        "status": "added",
         "value": {
             "deep": {
                 "id": {
@@ -98,47 +98,47 @@
         }
     },
     "group4": {
-        "flag": "nested",
+        "status": "nested",
         "value": {
             "default": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": "null",
                 "new_value": ""
             },
             "foo": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": 0,
                 "new_value": "null"
             },
             "isNested": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": "false",
                 "new_value": "none"
             },
             "key": {
-                "flag": "added",
+                "status": "added",
                 "value": "false"
             },
             "nest": {
-                "flag": "nested",
+                "status": "nested",
                 "value": {
                     "bar": {
-                        "flag": "changed",
+                        "status": "changed",
                         "old_value": "",
                         "new_value": 0
                     },
                     "isNested": {
-                        "flag": "removed",
+                        "status": "removed",
                         "value": "true"
                     }
                 }
             },
             "someKey": {
-                "flag": "added",
+                "status": "added",
                 "value": "true"
             },
             "type": {
-                "flag": "changed",
+                "status": "changed",
                 "old_value": "bas",
                 "new_value": "bar"
             }

@@ -2,7 +2,7 @@
 
 """
 This Cli-program return different two files
- which have formats .json or .yaml.
+ which have extension .json or .yaml.
 """
 
 from gendiff.gen_diff import generate_diff

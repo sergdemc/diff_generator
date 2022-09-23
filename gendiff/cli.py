@@ -3,7 +3,7 @@ import argparse
 # my_version = pkg_resources.get_distribution('gendiff').version
 
 
-def parse_cli():
+def parse_cli_args():
     parser = argparse.ArgumentParser(description='Compares two configuration\
                         files and shows a difference.')
     parser.add_argument('first_file', type=str)
@@ -21,4 +21,4 @@ def parse_cli():
     return args.first_file, args.second_file, args.format
 
 
-path1, path2, format_name = parse_cli()
+path1, path2, format_name = parse_cli_args()
