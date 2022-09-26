@@ -1,3 +1,5 @@
+from gendiff.formatters.normalize import normalize_values
+
 
 def stringify_val(data, depth: int) -> str:
     """
@@ -54,4 +56,5 @@ def format(diff: dict) -> str:
         diff (dict): dict with differences
         return: str
     """
+    diff = normalize_values(diff)
     return f"{{\n{stringify_diff(diff)}}}"

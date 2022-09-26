@@ -1,4 +1,7 @@
-def corr_vals(data):
+from gendiff.formatters.normalize import normalize_values
+
+
+def stringify(data):
     """
     Return '[complex value]' if dict value is complex,
     otherwise return data.
@@ -38,9 +41,9 @@ def gen_plain_diff(diff: dict, keys=None) -> list:
             lines.extend(gen_plain_diff(v['value'], keys))
             keys = keys[:-1]
         else:
-            val = corr_vals(v.get('value'))
-            old_val = corr_vals(v.get('old_value'))
-            new_val = corr_vals(v.get('new_value'))
+            val = stringify(v.get('value'))
+            old_val = stringify(v.get('old_value'))
+            new_val = stringify(v.get('new_value'))
             lines.append(msgs.get(status).format(
                 path=path,
                 val=val,
@@ -56,5 +59,6 @@ def format(diff: dict) -> str:
         diff (dict): dict with differences
         return: str
     """
+    diff = normalize_values(diff)
     diff = gen_plain_diff(diff)
     return '\n'.join(filter(lambda s: s != '', diff))

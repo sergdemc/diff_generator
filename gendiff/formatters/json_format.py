@@ -1,5 +1,7 @@
 import json
 
+from gendiff.formatters.normalize import normalize_values
+
 
 def format(diff: dict) -> str:
     """
@@ -7,4 +9,5 @@ def format(diff: dict) -> str:
         diff (dict): dict with differences
         return: json-like string
     """
+    diff = normalize_values(diff)
     return json.dumps(diff, indent=4)
