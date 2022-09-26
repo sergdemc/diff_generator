@@ -21,7 +21,3 @@ formats = ['stylish', 'plain', 'json']
 def test_generate_diff(path1, path2, format_name, expected):
     with open(expected) as f:
         assert gen_diff.generate_diff(path1, path2, format_name) == f.read()
-
-# def test_with_empty_file():
-#     with pytest.raises(json.JSONDecodeError):
-#         generate_diff(json_1, empty_file)

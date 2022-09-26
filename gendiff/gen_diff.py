@@ -1,21 +1,19 @@
 from collections import OrderedDict
-from gendiff.formatters import RENDERS
-from gendiff.loader import load_file
+from gendiff.formatters import FORMATTERS
+from gendiff.parser import parse
+import os
 
 
-def normalize_values(file: dict) -> dict:
+def read_data(path: str):
+    return open(path)
+
+
+def get_format(pathfile: str) -> str:
     """
-    Changes bool types and None type values:
-        True to 'true', False to 'false', None to 'null'.
+    Read filename and return extension of a file
     """
-    corr_values = {True: 'true', False: 'false', None: 'null'}
-
-    for key, val in file.items():
-        if isinstance(val, dict):
-            normalize_values(val)
-        elif isinstance(val, (bool, type(None))):
-            file[key] = corr_values[val]
-    return file
+    extension = os.path.splitext(pathfile)[1].lstrip('.')
+    return extension
 
 
 def get_diff(old: dict, new: dict) -> OrderedDict:  # noqa
@@ -57,8 +55,7 @@ def generate_diff(path1: str, path2: str, format_name='stylish') -> str:
         format_name (str): format output data, default=stylish
         return (str): depends on param "format_name"
     """
-    file1 = load_file(path1)
-    file2 = load_file(path2)
-    diff = get_diff(file1, file2)
-    diff = normalize_values(diff)
-    return RENDERS[format_name].format(diff)
+    data1 = parse(read_data(path1), get_format(path1))
+    data2 = parse(read_data(path2), get_format(path2))
+    diff = get_diff(data1, data2)
+    return FORMATTERS[format_name].format(diff)
